@@ -1,103 +1,152 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [showNote, setShowNote] = useState(false);
+  const [sunflowerPositions, setSunflowerPositions] = useState<{ id: number; left: number }[]>([]);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  useEffect(() => {
+    setSunflowerPositions(
+      Array.from({ length: 20 }, (_, index) => ({
+        id: index + Math.random(), // Unique ID
+        left: Math.random() * 100, // Random left position
+      }))
+    );
+  }, []);
+
+  useEffect(() => {
+    if (showNote && audioRef.current) {
+      const playAudio = async () => {
+        try {
+          await audioRef.current?.play();
+        } catch (error) {
+          console.log("Autoplay prevented by browser:", error);
+        }
+      };
+      playAudio();
+    }
+  }, [showNote]);
+
+  return (
+    <div
+      className="flex flex-col items-center justify-center min-h-screen p-6 relative bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/2.jpg')",
+      }}
+    >
+      {/* Falling Sunflowers */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {sunflowerPositions.map(({ id, left }) => (
+          <motion.div
+            key={id}
+            className="absolute w-14 h-14"
+            style={{ top: "-5%", left: `${left}%` }}
+            animate={{ y: ["0%", "100%"], opacity: [1, 1, 0] }}
+            transition={{
+              duration: Math.random() * 4 + 5,
+              repeat: Infinity,
+              ease: "linear",
+              delay: Math.random() * 2,
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <Image src="/sunflower.png" alt="Falling Sunflower" width={56} height={56} />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Birthday Message */}
+      {!showNote && (
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-4xl font-bold text-black">🎉 Happy Birthday! 🎂</h1>
+          <h1 className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">Gaayuuu...</h1>
+          <p className="text-sm text-black mt-2">Click below to open your surprise and scroll down!</p>
+          <motion.button
+            className="mt-4 bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg transition duration-300"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setShowNote(true)}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            Open Your Surprise 🎁
+          </motion.button>
+        </motion.div>
+      )}
+
+      {/* Audio Element */}
+      <audio
+        ref={audioRef}
+        src="/Sunflower.mp3"
+        loop
+        className="hidden"
+        onCanPlay={() => console.log("Audio loaded and ready to play")}
+      ></audio>
+
+      {/* Birthday Note */}
+
+{showNote && (
+  <motion.div
+    className="p-6 rounded-lg shadow-lg max-w-lg text-center relative bg-white/30 backdrop-blur-md overflow-hidden"
+    initial={{ opacity: 0, scale: 0.8 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    {/* Content with Scrollable Text */}
+    <div className="relative z-10 p-4 overflow-y-auto max-h-96">
+      {/* Image Inside the Note */}
+      <div className="flex justify-center">
+        <Image
+          src="/Us.JPG" // Change this to the actual image path
+          alt="Memorable Moment"
+          width={200}
+          height={200}
+          className="rounded-lg shadow-lg mb-4"
+        />
+      </div>
+
+      {/* Birthday Message */}
+      <h2 className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">
+        Dear Gaayuuu..,
+      </h2>
+      <p className="mt-4 text-gray-700 text-left">
+        “Happy Birthday to the Brightest Sunflower! 🌻 <br /> Just like a
+        sunflower turns toward the sun, you’ve always been the light that
+        guided me through my darkest days. Through every smile we’ve shared,
+        every text we&apos;ve exchanged, every gossip we&apos;ve whispered,
+        every secret we&apos;ve kept, every place we’ve explored, and every
+        meal we’ve enjoyed, you’ve filled our bond with warmth and color.
+        Even our silly fights, those little storms, have only made our bond
+        stronger (Atleast I feel), also am so glad that you corrected me
+        where am lacking and showed me who I&apos;m actually. You were there
+        when my world felt cold and empty(at the time of me being jobless
+        and visa rejection), reminding me that brighter days would come. You
+        are one of the strongest persons I&apos;ve met in my life,
+        <br/>
+        On your special day, I just want you to know how deeply
+        grateful I am for you, for your love, your presence, and the endless
+        memories we’ve created together. I don&apos;t know how you are
+        feeling about me, but I really love you ❤️, for the way you&apos;re with
+        me, especially in the initial days, and I miss them more, I miss
+        those chats, those excitement and I wish we can be like that, all I
+        can do is just hope for the best for both of us. 
+        <br/>
+        May your life continue to bloom with happiness, love, and success, just like a
+        sunflower basking in endless sunshine. <br/> Happy Birthday! Keep shining,
+        little sunflower.” 🌻😍🫂
+      </p>
+    </div>
+  </motion.div>
+)}
+
+
+    
     </div>
   );
 }
