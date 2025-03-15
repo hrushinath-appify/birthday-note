@@ -56,7 +56,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="/sunflower.png"
+              src="/kaaruthunnaLove.png"
               alt="Falling Sunflower"
               width={56}
               height={56}
@@ -77,7 +77,7 @@ export default function Home() {
             🎉 Happy Birthday! 🎂
           </h1>
           <h1 className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">
-            Gaayuuu...
+            Saiii ❣️❣️❣️
           </h1>
           <p className="text-sm text-black mt-2">
             Click below to open your surprise and scroll down!
@@ -116,7 +116,7 @@ export default function Home() {
             {/* Image Inside the Note */}
             <div className="flex justify-center">
               <Image
-                src="/Us.JPG"
+                src="/Sai.jpeg"
                 alt="Memorable Moment"
                 width={200}
                 height={200}
@@ -126,45 +126,41 @@ export default function Home() {
 
             {/* Birthday Message */}
             <h2 className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">
-              Dear Gaayuuu..,
+              {" "}
+              Dear Sai❣️❣️❣️..,{" "}
             </h2>
             <p className="mt-4 text-gray-700 text-left">
+              {" "}
               <span className="text-center text-bold">
-                &quot;Happiest Birthday to the Brightest Sunflower!&quot; 🌻
-              </span>
-              <br /> Just like a sunflower turns towards the sun, you’ve been
-              the light that guided me through my darkest days. Through every
-              smile we’ve shared, every text we&apos;ve exchanged, every gossip
-              we&apos;ve whispered, every secret we&apos;ve kept, every place
-              we’ve explored, and every meal we’ve enjoyed, you’ve filled our
-              bond with warmth and color. Even our silly fights, those little
-              storms, have only made our bond stronger (I feel), also am so glad
-              that you corrected me at places, where am lacking and showed me
-              who I&apos;m actually. You were there when my world felt cold and
-              empty(At times me being jobless, lonely, and visa rejection),
-              reminding me that brighter days would come.{" "}
+                {" "}
+                &ldquo;Happiest Birthday to the Most Incredible Soul!&rdquo;
+                ✨💖{" "}
+              </span>{" "}
+              <br /> Life has its way of testing bonds, and though we’ve had our
+              share of misunderstandings, I’m so grateful that we found our way
+              back to a beautiful friendship. Through every laugh we’ve shared,
+              every deep conversation, every moment of silence, and even the
+              rough patches, you’ve been someone truly special in my life. I
+              can’t thank you enough for understanding me, for seeing beyond my
+              flaws, and for not judging me by my past. I know I may have hurt
+              you at times, and while I truly wish I never do again, I can’t
+              promise to stop annoying you or irritating you (because let’s be
+              honest, it’s part of the fun, just like Rishi used to do! 😂). On
+              your special day, I just want to remind you how amazing you are.{" "}
               <span className="text-green-600">
-                You are one of the strongest persons I&apos;ve met in my life,
-              </span>
-              <br />
-              On your special day, I just want you to know how deeply grateful I
-              am for you, for your love, your presence, and the memories we’ve
-              created together. I don&apos;t know how you are feeling about me
-              right now, but I really love you ❤️, for the way you&apos;re with
-              me, especially in the initial days, and I miss them more, I miss
-              those cute chats, those lovely excitement and I wish we can be
-              like that, all I can do is hope for the best for both of us.
-              There are times where I dissapointed you, but I hope you know my
-              intentions behind them, and I hope you understand me and forgive me
-              for that. <br /> I really wish you to be happy and joyful always,
-              and I&apos;ll be there for you whenever you need me.
-              I hope you have a wonderful day filled with love, laughter, and
-              everything you’ve ever wished for.
-              May your life continue to bloom with happiness, love, and success,
-              just like a sunflower basking in endless sunshine. <p className="text-pink-500">Happy
-              Birthday! Keep shining, little sunflower.” 🌻😍🫂</p> <br />
-              <span>With lots of ❤️, </span> <br />
-              <span className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">Rishiii,</span>
+                You deserve all the happiness, success, and love in the world,
+              </span>{" "}
+              and I’ll always be here cheering you on, no matter what. Let’s
+              keep making beautiful memories together! Wishing you a birthday as
+              wonderful as you are. May your year be filled with joy, love, and
+              all the beautiful things your heart desires. ✨🎉
+              <p className="text-pink-500">
+                {" "}
+                Happy Birthday! Keep shining, you beautiful soul. 💫🥰🫂{" "}
+                <br />
+                <span>With lots of ❤️, </span> <br />
+                <span className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">Rishiii,</span>
+              </p>
             </p>
           </div>
         </motion.div>
