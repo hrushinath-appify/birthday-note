@@ -77,7 +77,7 @@ export default function Home() {
             🎉 Happy Birthday! 🎂
           </h1>
           <h1 className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">
-            Saiii ❣️❣️❣️
+            Killer ❣️❣️❣️
           </h1>
           <p className="text-sm text-black mt-2">
             Click below to open your surprise and scroll down!
@@ -116,7 +116,7 @@ export default function Home() {
             {/* Image Inside the Note */}
             <div className="flex justify-center">
               <Image
-                src="/Sai.jpeg"
+                src="/Killer.jpg"
                 alt="Memorable Moment"
                 width={200}
                 height={200}
@@ -127,7 +127,7 @@ export default function Home() {
             {/* Birthday Message */}
             <h2 className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">
               {" "}
-              Dear Sai❣️❣️❣️..,{" "}
+              Dear Killer❣️❣️❣️..,{" "}
             </h2>
             <p className="mt-4 text-gray-700 text-left">
               {" "}
@@ -140,27 +140,36 @@ export default function Home() {
               share of misunderstandings, I’m so grateful that we found our way
               back to a beautiful friendship. Through every laugh we’ve shared,
               every deep conversation, every moment of silence, and even the
-              rough patches, you’ve been someone truly special in my life. I
-              can’t thank you enough for understanding me, for seeing beyond my
-              flaws, and for not judging me by my past. I know I may have hurt
-              you at times, and while I truly wish I never do again, I can’t
-              promise to stop annoying you or irritating you (because let’s be
-              honest, it’s part of the fun, just like Rishi used to do! 😂). On
-              your special day, I just want to remind you how amazing you are.{" "}
+              rough patches, you’ve been someone truly special in my life
+              Killer❣️❣️❣️. I can’t thank you enough for understanding me, for
+              seeing beyond my flaws, and for not judging me by my past. I know
+              I may have hurt you at times (Akhila vishyam lo especially), and
+              while I truly wish I never do again, I can’t promise to stop
+              annoying you or irritating you (because let’s be honest, it’s part
+              of the fun, just like Killer used to do! 😂). On your special day,
+              I just want to remind you how amazing you are.{" "}
               <span className="text-green-600">
                 You deserve all the happiness, success, and love in the world,
               </span>{" "}
               and I’ll always be here cheering you on, no matter what. Let’s
               keep making beautiful memories together! Wishing you a birthday as
               wonderful as you are. May your year be filled with joy, love, and
-              all the beautiful things your heart desires. ✨🎉
-              <p className="text-pink-500">
+              all the beautiful things your heart desires. ✨🎉 <br />
+              <span>
+                Killer, I don&apos;t know, what&apos;s gonna happen in future,
+                though we may be together or not in this friendship, you remains
+                the best person and a great memory in my life! Trust me in this
+                Killer❣️, Am sorry ra.
+              </span>
+              <span className="text-pink-500">
                 {" "}
-                Happy Birthday! Keep shining, you beautiful soul. 💫🥰🫂{" "}
-                <br />
+                Happy Birthday Killer❣️❣️❣️ Keep shining, you beautiful soul.
+                💫🥰🫂 <br />
                 <span>With lots of ❤️, </span> <br />
-                <span className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">Rishiii,</span>
-              </p>
+                <span className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">
+                  Rishiii,
+                </span>
+              </span>
             </p>
           </div>
         </motion.div>
