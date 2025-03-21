@@ -151,15 +151,14 @@ export default function Home() {
               <span className="text-green-600">
                 You deserve all the happiness, success, and love in the world,
               </span>{" "}
-              and I’ll always be here cheering you on, no matter what. Let’s
-              keep making beautiful memories together! Wishing you a birthday as
+              and I’ll always be here cheering you on, no matter what. Wishing you a birthday as
               wonderful as you are. May your year be filled with joy, love, and
               all the beautiful things your heart desires. ✨🎉 <br />
               <span>
                 Killer, I don&apos;t know, what&apos;s gonna happen in future,
-                though we may be together or not in this friendship, you remains
+                though we may be together or not in this friendship, but you remains as
                 the best person and a great memory in my life! Trust me in this
-                Killer❣️, Am sorry ra.
+                Killer❣️, Am sorry ra. <br />
               </span>
               <span className="text-pink-500">
                 {" "}
@@ -167,7 +166,7 @@ export default function Home() {
                 💫🥰🫂 <br />
                 <span>With lots of ❤️, </span> <br />
                 <span className="text-4xl mt-2 font-bold text-pink-400 font-[cursive]">
-                  Rishiii,
+                  Your Killer,
                 </span>
               </span>
             </p>
